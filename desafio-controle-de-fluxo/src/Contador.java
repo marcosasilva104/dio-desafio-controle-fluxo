@@ -4,16 +4,16 @@ public class Contador {
     public static void main(String[] args) throws Exception {
         Scanner terminal = new Scanner(System.in);
 
-        System.out.println("Digite o valor número 1: ");
+        System.out.println("Digite o primeiro parâmetro: ");
         int parametroUm = terminal.nextInt();
 
-        System.out.println("Digite o valor número 2: ");
+        System.out.println("Digite o segundo parâmetro: ");
         int parametroDois = terminal.nextInt();
 
         try {
             contar(parametroUm, parametroDois);
         } catch (ParametrosInvalidosExceptions e) {
-            System.out.println("O primero parâmetro deverá ser menor que o segundo parâmetro");
+            System.out.println("O segundo parâmetro deve ser maior que o primeiro");
         }
         
         terminal.close();
@@ -26,9 +26,8 @@ public class Contador {
         if (contagem <= 0) 
             throw new ParametrosInvalidosExceptions();
 
-        for(int i = contagem; i < parametroDis; i++ ){
-            System.out.println("A contagem entre os paramentros um e dois: " + i);
+        for(int i = 1; i <= contagem; i++ ){
+            System.out.println("Imprimindo o número " + i);
         }     
-    
     }
 }
